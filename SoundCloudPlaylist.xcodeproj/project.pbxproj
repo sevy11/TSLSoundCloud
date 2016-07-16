@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2638B27B1D39D6B700411CEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638B27A1D39D6B700411CEA /* main.m */; };
+		2638B27E1D39D6B700411CEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638B27D1D39D6B700411CEA /* AppDelegate.m */; };
+		2638B2811D39D6B700411CEA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638B2801D39D6B700411CEA /* ViewController.m */; };
+		2638B2841D39D6B700411CEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2638B2821D39D6B700411CEA /* Main.storyboard */; };
+		2638B2861D39D6B700411CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2638B2851D39D6B700411CEA /* Assets.xcassets */; };
+		2638B2891D39D6B700411CEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2638B2871D39D6B700411CEA /* LaunchScreen.storyboard */; };
+		2638B2941D39D6B700411CEA /* SoundCloudPlaylistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638B2931D39D6B700411CEA /* SoundCloudPlaylistTests.m */; };
+		2638B29F1D39D6B700411CEA /* SoundCloudPlaylistUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638B29E1D39D6B700411CEA /* SoundCloudPlaylistUITests.m */; };
+		2638B2B11D3A927800411CEA /* SoundCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638B2B01D3A927800411CEA /* SoundCloud.m */; };
+		2638B2B41D3A98A300411CEA /* UserProfileTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638B2B31D3A98A300411CEA /* UserProfileTableTableViewController.m */; };
+		2638B2B91D3A9A2300411CEA /* SoundCloudManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638B2B81D3A9A2300411CEA /* SoundCloudManager.m */; };
+		42365EB71C35D49D5FF91A38 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 775BE16B5E97F0531BD2119A /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2638B2901D39D6B700411CEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2638B26E1D39D6B700411CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2638B2751D39D6B700411CEA;
+			remoteInfo = SoundCloudPlaylist;
+		};
+		2638B29B1D39D6B700411CEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2638B26E1D39D6B700411CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2638B2751D39D6B700411CEA;
+			remoteInfo = SoundCloudPlaylist;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2638B2761D39D6B700411CEA /* SoundCloudPlaylist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCloudPlaylist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2638B27A1D39D6B700411CEA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2638B27C1D39D6B700411CEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2638B27D1D39D6B700411CEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2638B27F1D39D6B700411CEA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2638B2801D39D6B700411CEA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2638B2831D39D6B700411CEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2638B2851D39D6B700411CEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2638B2881D39D6B700411CEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2638B28A1D39D6B700411CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2638B28F1D39D6B700411CEA /* SoundCloudPlaylistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundCloudPlaylistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2638B2931D39D6B700411CEA /* SoundCloudPlaylistTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundCloudPlaylistTests.m; sourceTree = "<group>"; };
+		2638B2951D39D6B700411CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2638B29A1D39D6B700411CEA /* SoundCloudPlaylistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundCloudPlaylistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2638B29E1D39D6B700411CEA /* SoundCloudPlaylistUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundCloudPlaylistUITests.m; sourceTree = "<group>"; };
+		2638B2A01D39D6B700411CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2638B2AF1D3A927800411CEA /* SoundCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundCloud.h; sourceTree = "<group>"; };
+		2638B2B01D3A927800411CEA /* SoundCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundCloud.m; sourceTree = "<group>"; };
+		2638B2B21D3A98A300411CEA /* UserProfileTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileTableTableViewController.h; sourceTree = "<group>"; };
+		2638B2B31D3A98A300411CEA /* UserProfileTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileTableTableViewController.m; sourceTree = "<group>"; };
+		2638B2B71D3A9A2300411CEA /* SoundCloudManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundCloudManager.h; sourceTree = "<group>"; };
+		2638B2B81D3A9A2300411CEA /* SoundCloudManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundCloudManager.m; sourceTree = "<group>"; };
+		775BE16B5E97F0531BD2119A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		90EEEE89C5D31D9ED4AD850B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A6909E9764E1CDBD4494C6C5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2638B2731D39D6B700411CEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42365EB71C35D49D5FF91A38 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2638B28C1D39D6B700411CEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2638B2971D39D6B700411CEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2638B26D1D39D6B700411CEA = {
+			isa = PBXGroup;
+			children = (
+				2638B2781D39D6B700411CEA /* SoundCloudPlaylist */,
+				2638B2921D39D6B700411CEA /* SoundCloudPlaylistTests */,
+				2638B29D1D39D6B700411CEA /* SoundCloudPlaylistUITests */,
+				2638B2771D39D6B700411CEA /* Products */,
+				F4CA1D366E667C648B2E88BA /* Pods */,
+				FA90DADC37497941FCFCE9DF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2638B2771D39D6B700411CEA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2638B2761D39D6B700411CEA /* SoundCloudPlaylist.app */,
+				2638B28F1D39D6B700411CEA /* SoundCloudPlaylistTests.xctest */,
+				2638B29A1D39D6B700411CEA /* SoundCloudPlaylistUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2638B2781D39D6B700411CEA /* SoundCloudPlaylist */ = {
+			isa = PBXGroup;
+			children = (
+				2638B27C1D39D6B700411CEA /* AppDelegate.h */,
+				2638B27D1D39D6B700411CEA /* AppDelegate.m */,
+				2638B2821D39D6B700411CEA /* Main.storyboard */,
+				2638B2851D39D6B700411CEA /* Assets.xcassets */,
+				2638B2B51D3A98AC00411CEA /* ViewControllers */,
+				2638B2BA1D3A9A2C00411CEA /* Managers */,
+				2638B2B61D3A98C300411CEA /* Object */,
+				2638B2871D39D6B700411CEA /* LaunchScreen.storyboard */,
+				2638B28A1D39D6B700411CEA /* Info.plist */,
+				2638B2791D39D6B700411CEA /* Supporting Files */,
+			);
+			path = SoundCloudPlaylist;
+			sourceTree = "<group>";
+		};
+		2638B2791D39D6B700411CEA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2638B27A1D39D6B700411CEA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2638B2921D39D6B700411CEA /* SoundCloudPlaylistTests */ = {
+			isa = PBXGroup;
+			children = (
+				2638B2931D39D6B700411CEA /* SoundCloudPlaylistTests.m */,
+				2638B2951D39D6B700411CEA /* Info.plist */,
+			);
+			path = SoundCloudPlaylistTests;
+			sourceTree = "<group>";
+		};
+		2638B29D1D39D6B700411CEA /* SoundCloudPlaylistUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2638B29E1D39D6B700411CEA /* SoundCloudPlaylistUITests.m */,
+				2638B2A01D39D6B700411CEA /* Info.plist */,
+			);
+			path = SoundCloudPlaylistUITests;
+			sourceTree = "<group>";
+		};
+		2638B2B51D3A98AC00411CEA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2638B2B21D3A98A300411CEA /* UserProfileTableTableViewController.h */,
+				2638B2B31D3A98A300411CEA /* UserProfileTableTableViewController.m */,
+				2638B27F1D39D6B700411CEA /* ViewController.h */,
+				2638B2801D39D6B700411CEA /* ViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2638B2B61D3A98C300411CEA /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				2638B2AF1D3A927800411CEA /* SoundCloud.h */,
+				2638B2B01D3A927800411CEA /* SoundCloud.m */,
+			);
+			name = Object;
+			sourceTree = "<group>";
+		};
+		2638B2BA1D3A9A2C00411CEA /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2638B2B71D3A9A2300411CEA /* SoundCloudManager.h */,
+				2638B2B81D3A9A2300411CEA /* SoundCloudManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		F4CA1D366E667C648B2E88BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A6909E9764E1CDBD4494C6C5 /* Pods.debug.xcconfig */,
+				90EEEE89C5D31D9ED4AD850B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA90DADC37497941FCFCE9DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				775BE16B5E97F0531BD2119A /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2638B2751D39D6B700411CEA /* SoundCloudPlaylist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2638B2A31D39D6B700411CEA /* Build configuration list for PBXNativeTarget "SoundCloudPlaylist" */;
+			buildPhases = (
+				193E395E1D5E9D77E33234E2 /* Check Pods Manifest.lock */,
+				2638B2721D39D6B700411CEA /* Sources */,
+				2638B2731D39D6B700411CEA /* Frameworks */,
+				2638B2741D39D6B700411CEA /* Resources */,
+				1B49015282F3C19B1DBD9E82 /* Embed Pods Frameworks */,
+				83B3047627BECA9197398C3A /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoundCloudPlaylist;
+			productName = SoundCloudPlaylist;
+			productReference = 2638B2761D39D6B700411CEA /* SoundCloudPlaylist.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2638B28E1D39D6B700411CEA /* SoundCloudPlaylistTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2638B2A61D39D6B700411CEA /* Build configuration list for PBXNativeTarget "SoundCloudPlaylistTests" */;
+			buildPhases = (
+				2638B28B1D39D6B700411CEA /* Sources */,
+				2638B28C1D39D6B700411CEA /* Frameworks */,
+				2638B28D1D39D6B700411CEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2638B2911D39D6B700411CEA /* PBXTargetDependency */,
+			);
+			name = SoundCloudPlaylistTests;
+			productName = SoundCloudPlaylistTests;
+			productReference = 2638B28F1D39D6B700411CEA /* SoundCloudPlaylistTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2638B2991D39D6B700411CEA /* SoundCloudPlaylistUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2638B2A91D39D6B700411CEA /* Build configuration list for PBXNativeTarget "SoundCloudPlaylistUITests" */;
+			buildPhases = (
+				2638B2961D39D6B700411CEA /* Sources */,
+				2638B2971D39D6B700411CEA /* Frameworks */,
+				2638B2981D39D6B700411CEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2638B29C1D39D6B700411CEA /* PBXTargetDependency */,
+			);
+			name = SoundCloudPlaylistUITests;
+			productName = SoundCloudPlaylistUITests;
+			productReference = 2638B29A1D39D6B700411CEA /* SoundCloudPlaylistUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2638B26E1D39D6B700411CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Michael Sevy";
+				TargetAttributes = {
+					2638B2751D39D6B700411CEA = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					2638B28E1D39D6B700411CEA = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 2638B2751D39D6B700411CEA;
+					};
+					2638B2991D39D6B700411CEA = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 2638B2751D39D6B700411CEA;
+					};
+				};
+			};
+			buildConfigurationList = 2638B2711D39D6B700411CEA /* Build configuration list for PBXProject "SoundCloudPlaylist" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2638B26D1D39D6B700411CEA;
+			productRefGroup = 2638B2771D39D6B700411CEA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2638B2751D39D6B700411CEA /* SoundCloudPlaylist */,
+				2638B28E1D39D6B700411CEA /* SoundCloudPlaylistTests */,
+				2638B2991D39D6B700411CEA /* SoundCloudPlaylistUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2638B2741D39D6B700411CEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2638B2891D39D6B700411CEA /* LaunchScreen.storyboard in Resources */,
+				2638B2861D39D6B700411CEA /* Assets.xcassets in Resources */,
+				2638B2841D39D6B700411CEA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2638B28D1D39D6B700411CEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2638B2981D39D6B700411CEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		193E395E1D5E9D77E33234E2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1B49015282F3C19B1DBD9E82 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83B3047627BECA9197398C3A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2638B2721D39D6B700411CEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2638B2811D39D6B700411CEA /* ViewController.m in Sources */,
+				2638B27E1D39D6B700411CEA /* AppDelegate.m in Sources */,
+				2638B2B41D3A98A300411CEA /* UserProfileTableTableViewController.m in Sources */,
+				2638B2B91D3A9A2300411CEA /* SoundCloudManager.m in Sources */,
+				2638B27B1D39D6B700411CEA /* main.m in Sources */,
+				2638B2B11D3A927800411CEA /* SoundCloud.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2638B28B1D39D6B700411CEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2638B2941D39D6B700411CEA /* SoundCloudPlaylistTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2638B2961D39D6B700411CEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2638B29F1D39D6B700411CEA /* SoundCloudPlaylistUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2638B2911D39D6B700411CEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2638B2751D39D6B700411CEA /* SoundCloudPlaylist */;
+			targetProxy = 2638B2901D39D6B700411CEA /* PBXContainerItemProxy */;
+		};
+		2638B29C1D39D6B700411CEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2638B2751D39D6B700411CEA /* SoundCloudPlaylist */;
+			targetProxy = 2638B29B1D39D6B700411CEA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2638B2821D39D6B700411CEA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2638B2831D39D6B700411CEA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2638B2871D39D6B700411CEA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2638B2881D39D6B700411CEA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2638B2A11D39D6B700411CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2638B2A21D39D6B700411CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2638B2A41D39D6B700411CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6909E9764E1CDBD4494C6C5 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SoundCloudPlaylist/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sevy.SoundCloudPlaylist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2638B2A51D39D6B700411CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90EEEE89C5D31D9ED4AD850B /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SoundCloudPlaylist/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sevy.SoundCloudPlaylist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2638B2A71D39D6B700411CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SoundCloudPlaylistTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sevy.SoundCloudPlaylistTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoundCloudPlaylist.app/SoundCloudPlaylist";
+			};
+			name = Debug;
+		};
+		2638B2A81D39D6B700411CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SoundCloudPlaylistTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sevy.SoundCloudPlaylistTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoundCloudPlaylist.app/SoundCloudPlaylist";
+			};
+			name = Release;
+		};
+		2638B2AA1D39D6B700411CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SoundCloudPlaylistUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sevy.SoundCloudPlaylistUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SoundCloudPlaylist;
+			};
+			name = Debug;
+		};
+		2638B2AB1D39D6B700411CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SoundCloudPlaylistUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sevy.SoundCloudPlaylistUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SoundCloudPlaylist;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2638B2711D39D6B700411CEA /* Build configuration list for PBXProject "SoundCloudPlaylist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2638B2A11D39D6B700411CEA /* Debug */,
+				2638B2A21D39D6B700411CEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2638B2A31D39D6B700411CEA /* Build configuration list for PBXNativeTarget "SoundCloudPlaylist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2638B2A41D39D6B700411CEA /* Debug */,
+				2638B2A51D39D6B700411CEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2638B2A61D39D6B700411CEA /* Build configuration list for PBXNativeTarget "SoundCloudPlaylistTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2638B2A71D39D6B700411CEA /* Debug */,
+				2638B2A81D39D6B700411CEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2638B2A91D39D6B700411CEA /* Build configuration list for PBXNativeTarget "SoundCloudPlaylistUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2638B2AA1D39D6B700411CEA /* Debug */,
+				2638B2AB1D39D6B700411CEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2638B26E1D39D6B700411CEA /* Project object */;
+}
