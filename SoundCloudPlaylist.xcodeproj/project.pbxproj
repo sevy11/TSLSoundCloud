@@ -144,7 +144,7 @@
 				2638B2851D39D6B700411CEA /* Assets.xcassets */,
 				2638B2B51D3A98AC00411CEA /* ViewControllers */,
 				2638B2BA1D3A9A2C00411CEA /* Managers */,
-				2638B2B61D3A98C300411CEA /* Object */,
+				2638B2B61D3A98C300411CEA /* Classes */,
 				264EC70D1D3C313500E89EFA /* Categories */,
 				2638B2871D39D6B700411CEA /* LaunchScreen.storyboard */,
 				2638B28A1D39D6B700411CEA /* Info.plist */,
@@ -196,7 +196,7 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		2638B2B61D3A98C300411CEA /* Object */ = {
+		2638B2B61D3A98C300411CEA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				2638B2AF1D3A927800411CEA /* SoundCloud.h */,
@@ -206,7 +206,7 @@
 				264EC7111D3C6CF200E89EFA /* Playlist.h */,
 				264EC7121D3C6CF200E89EFA /* Playlist.m */,
 			);
-			name = Object;
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		2638B2BA1D3A9A2C00411CEA /* Managers */ = {

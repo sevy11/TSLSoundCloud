@@ -102,10 +102,11 @@
 
 -(void)addSongToPlaylist:(SCAccount*)account withTrackId:(NSNumber*)track
 {
-    NSString *urlStr = [NSString stringWithFormat:@"https://api.soundcloud.com/me/playlists.json"];
+    NSDictionary *params = @{@"q" : track};
+    NSString *urlStr = [NSString stringWithFormat:@"https://api.soundcloud.com/me/put/playlists.json"];
     [SCRequest performMethod:SCRequestMethodPOST
                   onResource:[NSURL URLWithString:urlStr]
-             usingParameters:nil
+             usingParameters:params
                  withAccount:account
       sendingProgressHandler:nil
              responseHandler:^(NSURLResponse *response, NSData *data, NSError *error){
@@ -121,6 +122,7 @@
              }];
 }
 
+#pragma mark -- private parsers
 -(NSMutableArray*)parseList:(NSDictionary*)listDict arrayToPass:(NSMutableArray*)localLists
 {
     Playlist *list = [Playlist new];
@@ -252,20 +254,6 @@
     [localUser addObject:soundUser];
     
     return localUser;
-}
-
--(void)parseUserData:(NSDictionary*)soundDict
-{
-    SoundCloud *sc = [SoundCloud new];
-
-    sc.userId = soundDict[@"id"];
-    sc.username = soundDict[@"username"];
-    sc.fullName = soundDict[@"full_name"];
-    sc.avatarURL = soundDict[@"avatar_url"];
-    sc.city = soundDict[@"city"];
-    sc.userPageURL = soundDict[@"permalink_url"];
-    sc.playlistCount = soundDict[@"playlist_count"];
-    sc.trackCount = soundDict[@"track_count"];
 }
 @end
 

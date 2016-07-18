@@ -19,7 +19,6 @@
     self.navigationItem.title = @"Track";
 
     [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectMake(0,0,0,0)]];
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated

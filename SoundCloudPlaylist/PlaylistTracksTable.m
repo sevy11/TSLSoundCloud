@@ -8,6 +8,7 @@
 
 #import "PlaylistTracksTable.h"
 #import "Track.h"
+#import "SoundCloudManager.h"
 
 @interface PlaylistTracksTable()
 
@@ -23,9 +24,13 @@
 
     self.navigationItem.title = @"Tracks";
 
-    self.tracks = [NSMutableArray new];
+    UIBarButtonItem *editButton = [UIBarButtonItem new];
+    [editButton setTitle:@"Edit"];
+    [editButton setTarget:self];
+    [editButton setAction:@selector(btnClicked:)];
+    [self.navigationItem setRightBarButtonItem:editButton animated:YES];
 
-    NSLog(@"listsT's: %@", self.listTracks);
+    self.tracks = [NSMutableArray new];
 
     for (NSDictionary *dict in self.listTracks)
     {
@@ -34,6 +39,8 @@
         id trackArt = dict[@"artwork_url"];
         NSString *trackTitle = dict[@"title"];
         NSNumber *trackId = dict[@"id"];
+        NSDictionary *userDict = dict[@"user"];
+        NSString *username = userDict[@"username"];
 
         NSString *displayNameType = @"";
         if (trackArt != [NSNull null])
@@ -48,6 +55,7 @@
 
         track.title = trackTitle;
         track.trackId = trackId;
+        track.username = username;
 
         [self.tracks addObject:track];
         
@@ -57,8 +65,11 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:YES];
+}
 
-
+-(void) btnClicked:(id)sender
+{
+    NSLog(@"edit list with POST calls to SC to add/delete tracks from tracks array");
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -72,6 +83,7 @@
     Track *track = [self.tracks objectAtIndex:indexPath.row];
 
     cell.textLabel.text = track.title;
+    cell.detailTextLabel.text = track.username;
 
     if (track.artworkURL)
     {
@@ -81,5 +93,18 @@
     }
 
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [SoundCloudManager sharedSettings].selectedTrack = [self.tracks objectAtIndex:indexPath.row];
+
+    [self performSegueWithIdentifier:@"TrackDetails" sender:self];
+}
+
+-(void)tableView:(UITableView *)tableView didEndEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"edit tracks here");
 }
 @end

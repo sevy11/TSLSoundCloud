@@ -42,14 +42,16 @@ UISearchBarDelegate>
     self.tableView.delegate = self;
     self.automaticallyAdjustsScrollViewInsets = NO;
 
+    //Search Setup
     self.searchBar = [[UISearchBar alloc] init];
     self.searchBar.showsCancelButton = NO;
     self.searchBar.delegate = self;
     self.searchBar.placeholder = @"Search Songs";
     [self.searchBar becomeFirstResponder];
+
+    //NAV Setup
     self.navigationItem.titleView = self.searchBar;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithHexValue:@"ff8800"];
-
     self.playlists.image = [UIImage imageWithImage:[UIImage imageNamed:@"hamburger1"] scaledToSize:CGSizeMake(30, 30)];
     self.playlists.tintColor = [UIColor blackColor];
     self.settings.image = [UIImage imageWithImage:[UIImage imageNamed:@"noun_530953"] scaledToSize:CGSizeMake(30, 30)];
@@ -104,6 +106,7 @@ UISearchBarDelegate>
 
     if(searchText.length == 0)
     {
+        [self.tracks removeAllObjects];
         [self.tableView reloadData];
     }
     else
@@ -165,7 +168,6 @@ UISearchBarDelegate>
 #pragma mark -- HELPERS
 -(void)addActionSheetForTrack
 {
-
     UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Track Options:" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
 
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
@@ -174,7 +176,7 @@ UISearchBarDelegate>
         }];
     }]];
 
-    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Add Song to Playlist" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Add Song to Playlist" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
 
         [self performSegueWithIdentifier:@"Playlist" sender:self];
 

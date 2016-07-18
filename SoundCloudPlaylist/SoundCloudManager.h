@@ -29,6 +29,5 @@ typedef void (^resultBlockWithLists)(NSArray *playlist, NSError *error);
 -(void)accountAccess:(SCAccount*)account;
 -(void)search:(SCAccount*)account track:(NSString*)track withBlock:(resultBlockWithTracks)trackArray;
 -(void)getPlaylists:(SCAccount*)account withBlock:(resultBlockWithLists)lists;
-
--(void)parseUserData:(NSDictionary*)soundDict;
+-(void)addSongToPlaylist:(SCAccount*)account withTrackId:(NSNumber*)track;
 @end

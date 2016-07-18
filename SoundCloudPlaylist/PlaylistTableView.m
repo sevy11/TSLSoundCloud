@@ -29,7 +29,7 @@
     self.playlists = [NSMutableArray new];
     self.trackArray = [NSArray new];
 
-    self.navigationItem.title = @"Playlists";
+    self.navigationItem.title = @"Choose Playlist";
 
 }
 
@@ -93,13 +93,6 @@
 
     [self addActionSheetForList];
 
-
-
-
-
-
-
-
     Playlist *list = [self.playlists objectAtIndex:indexPath.row];
     self.trackArray = list.tracks;
 
@@ -119,13 +112,18 @@
         }];
     }]];
 
-    NSString *trackToAdd = [NSString stringWithFormat:@"Add Track:%@",[SoundCloudManager sharedSettings].selectedTrack.title
-];
-    [actionSheet addAction:[UIAlertAction actionWithTitle:trackToAdd style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    //check if we are adding a track or just viewing a playlist's tracks
+    if ([SoundCloudManager sharedSettings].selectedTrack.title)
+    {
+        NSString *trackToAdd = [NSString stringWithFormat:@"Add Track:%@", [SoundCloudManager sharedSettings].selectedTrack.title
+                                ];
+        [actionSheet addAction:[UIAlertAction actionWithTitle:trackToAdd style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            //if we're adding post call here
+//            [[SoundCloudManager sharedSettings] addSongToPlaylist:[SoundCloudManager sharedSettings].account withTrackId:[SoundCloudManager sharedSettings].selectedTrack.trackId];
 
-        //POST action here
-
-    }]];
+            NSLog(@"POST method to add song to playlist");
+        }]];
+    }
 
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Playlist Details" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
 
@@ -144,9 +142,3 @@
     }
 }
 @end
-
-
-
-
-
-
