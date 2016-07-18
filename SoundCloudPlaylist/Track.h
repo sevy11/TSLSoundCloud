@@ -11,7 +11,7 @@
 @interface Track : NSObject
 //track
 @property (strong, nonatomic) NSString *title;
-@property (strong, nonatomic) NSString *trackId;
+@property (strong, nonatomic) NSNumber *trackId;
 @property (strong, nonatomic) NSString *uri;
 @property (strong, nonatomic) NSString *streamURL;
 @property (strong, nonatomic) NSString *artworkURL;

@@ -40,8 +40,10 @@
                  else
                  {
                      NSDictionary *objects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-
+                     NSMutableArray *localUser = [NSMutableArray new];
                      self.userId = objects[@"id"];
+
+                     self.userArray = [self parseUser:objects arrayToPass:localUser];
                  }
              }];
 }
@@ -93,16 +95,7 @@
                  else
                  {
                      NSArray *playlists = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-                     //NSDictionary *dict = playlists.firstObject;
                      lists(playlists, nil);
-                     //self.playlist = playlists;
-//                     NSMutableArray *localList = [NSMutableArray new];
-//
-//                     for (NSDictionary *list in playlists)
-//                     {
-//                         lists([self parseList:list arrayToPass:localList], nil);
-//                         //self.playlist = [self parseList:list arrayToPass:localList];
-//                     }
                  }
              }];
 }
@@ -224,7 +217,42 @@
     return localTracks;
 }
 
+-(NSMutableArray*)parseUser:(NSDictionary*)userDict arrayToPass:(NSMutableArray*)localUser
+{
+    SoundCloud *soundUser = [SoundCloud new];
 
+
+    id userAvatar = userDict[@"avatar_url"];
+    NSString *username = userDict[@"username"];
+    NSNumber *playlistCount = userDict[@"playlist_count"];
+
+    //track
+    if (username != nil)
+    {
+        soundUser.username = username;
+    }
+
+    if (playlistCount >0)
+    {
+        soundUser.playlistCount = playlistCount;
+    }
+
+    NSString *displayNameType = @"";
+    if (userAvatar != [NSNull null])
+    {
+        displayNameType = (NSString *)userAvatar;
+        soundUser.avatarURL = userDict[@"avatar_url"];
+    }
+    else
+    {
+        soundUser.avatarURL = nil;
+    }
+
+
+    [localUser addObject:soundUser];
+    
+    return localUser;
+}
 
 -(void)parseUserData:(NSDictionary*)soundDict
 {

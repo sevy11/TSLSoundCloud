@@ -128,15 +128,12 @@ UISearchBarDelegate>
 
 - (IBAction)onPlaylists:(UIBarButtonItem *)sender
 {
-
-
     [self performSegueWithIdentifier:@"Playlist" sender:self];
 }
 
 - (IBAction)onSettings:(UIBarButtonItem *)sender
 {
-    //[self performSegueWithIdentifier:@"Settings" sender:self];
-    //put in account page: [SCSoundCloud removeAccess];
+    [self performSegueWithIdentifier:@"Settings" sender:self];
 }
 
 
@@ -169,7 +166,7 @@ UISearchBarDelegate>
 -(void)addActionSheetForTrack
 {
 
-    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Track Options" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Track Options:" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
 
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
 
@@ -177,14 +174,9 @@ UISearchBarDelegate>
         }];
     }]];
 
-    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Play Song" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-
-        //segue for more info page with delegate to SC manager -- throw objects
-    }]];
-
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Add Song to Playlist" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
 
-        //post to playlist
+        [self performSegueWithIdentifier:@"Playlist" sender:self];
 
     }]];
 

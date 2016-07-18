@@ -21,7 +21,8 @@ typedef void (^resultBlockWithLists)(NSArray *playlist, NSError *error);
 @property (strong, nonatomic) SCAccount *account;
 @property (strong, nonatomic) Track *selectedTrack;
 @property (strong, nonatomic) NSNumber *userId;
-@property (strong, nonatomic) NSArray *playlist;
+@property (strong, nonatomic) Playlist *playlist;
+@property (strong, nonatomic) NSArray *userArray;
 
 +(SoundCloudManager*)sharedSettings;
 

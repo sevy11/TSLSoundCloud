@@ -23,6 +23,8 @@
 		264EC7101D3C330000E89EFA /* ArtistInfoTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 264EC70F1D3C330000E89EFA /* ArtistInfoTable.m */; };
 		264EC7131D3C6CF200E89EFA /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 264EC7121D3C6CF200E89EFA /* Playlist.m */; };
 		264EC7161D3C720500E89EFA /* PlaylistTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 264EC7151D3C720500E89EFA /* PlaylistTableView.m */; };
+		264EC7191D3CFE6900E89EFA /* PlaylistTracksTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 264EC7181D3CFE6900E89EFA /* PlaylistTracksTable.m */; };
+		264EC71C1D3D119F00E89EFA /* UserInfoTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 264EC71B1D3D119F00E89EFA /* UserInfoTable.m */; };
 		42365EB71C35D49D5FF91A38 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 775BE16B5E97F0531BD2119A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,10 @@
 		264EC7121D3C6CF200E89EFA /* Playlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Playlist.m; sourceTree = "<group>"; };
 		264EC7141D3C720500E89EFA /* PlaylistTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistTableView.h; sourceTree = "<group>"; };
 		264EC7151D3C720500E89EFA /* PlaylistTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistTableView.m; sourceTree = "<group>"; };
+		264EC7171D3CFE6900E89EFA /* PlaylistTracksTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistTracksTable.h; sourceTree = "<group>"; };
+		264EC7181D3CFE6900E89EFA /* PlaylistTracksTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistTracksTable.m; sourceTree = "<group>"; };
+		264EC71A1D3D119F00E89EFA /* UserInfoTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoTable.h; sourceTree = "<group>"; };
+		264EC71B1D3D119F00E89EFA /* UserInfoTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoTable.m; sourceTree = "<group>"; };
 		775BE16B5E97F0531BD2119A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		90EEEE89C5D31D9ED4AD850B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A6909E9764E1CDBD4494C6C5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -176,12 +182,16 @@
 		2638B2B51D3A98AC00411CEA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2638B27F1D39D6B700411CEA /* ViewController.h */,
-				2638B2801D39D6B700411CEA /* ViewController.m */,
 				264EC70E1D3C330000E89EFA /* ArtistInfoTable.h */,
 				264EC70F1D3C330000E89EFA /* ArtistInfoTable.m */,
+				264EC71A1D3D119F00E89EFA /* UserInfoTable.h */,
+				264EC71B1D3D119F00E89EFA /* UserInfoTable.m */,
+				2638B27F1D39D6B700411CEA /* ViewController.h */,
+				2638B2801D39D6B700411CEA /* ViewController.m */,
 				264EC7141D3C720500E89EFA /* PlaylistTableView.h */,
 				264EC7151D3C720500E89EFA /* PlaylistTableView.m */,
+				264EC7171D3CFE6900E89EFA /* PlaylistTracksTable.h */,
+				264EC7181D3CFE6900E89EFA /* PlaylistTracksTable.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -423,11 +433,13 @@
 				2638B27E1D39D6B700411CEA /* AppDelegate.m in Sources */,
 				2638B2B91D3A9A2300411CEA /* SoundCloudManager.m in Sources */,
 				264EC7091D3C261A00E89EFA /* UIColor+SC.m in Sources */,
+				264EC7191D3CFE6900E89EFA /* PlaylistTracksTable.m in Sources */,
 				264EC7161D3C720500E89EFA /* PlaylistTableView.m in Sources */,
 				264EC7061D3BC3B900E89EFA /* Track.m in Sources */,
 				2638B27B1D39D6B700411CEA /* main.m in Sources */,
 				2638B2B11D3A927800411CEA /* SoundCloud.m in Sources */,
 				264EC7131D3C6CF200E89EFA /* Playlist.m in Sources */,
+				264EC71C1D3D119F00E89EFA /* UserInfoTable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
