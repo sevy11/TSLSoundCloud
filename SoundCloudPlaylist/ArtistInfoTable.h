@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ArtistInfoTable : UITableViewCell
+@interface ArtistInfoTable : UITableViewController
+
+@property (weak, nonatomic) IBOutlet UIImageView *coverArtImage;
+@property (weak, nonatomic) IBOutlet UILabel *trackName;
+@property (weak, nonatomic) IBOutlet UILabel *artistLabel;
 
 @end

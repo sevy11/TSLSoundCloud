@@ -10,14 +10,25 @@
 #import "SCUI.h"
 #import <AFNetworking.h>
 #import "SoundCloud.h"
+#import "SoundCloudManager.h"
+#import "Track.h"
+#import "UIColor+SC.h"
+#import "UIImage+SC.h"
 
-@interface ViewController ()
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *playlists;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *settings;
-@property (strong, nonatomic) SCAccount *account;
+@interface ViewController ()<UITableViewDelegate,
+UITableViewDataSource,
+UISearchBarDelegate>
 
 #define CLIENT_ID @"5d56ce12bf54a1a60632a180aeb8fa57"
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *playlists;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *settings;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) SCAccount *account;
+@property (strong, nonatomic) NSMutableArray *tracks;
+
+@property (strong, nonatomic) UISearchBar *searchBar;
 @end
 
 @implementation ViewController
@@ -26,7 +37,23 @@
 {
     [super viewDidLoad];
 
+    self.tracks = [NSMutableArray new];
+    
+    self.tableView.delegate = self;
+    self.automaticallyAdjustsScrollViewInsets = NO;
 
+    self.searchBar = [[UISearchBar alloc] init];
+    self.searchBar.showsCancelButton = NO;
+    self.searchBar.delegate = self;
+    self.searchBar.placeholder = @"Search Songs";
+    [self.searchBar becomeFirstResponder];
+    self.navigationItem.titleView = self.searchBar;
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithHexValue:@"ff8800"];
+
+    self.playlists.image = [UIImage imageWithImage:[UIImage imageNamed:@"hamburger1"] scaledToSize:CGSizeMake(30, 30)];
+    self.playlists.tintColor = [UIColor blackColor];
+    self.settings.image = [UIImage imageWithImage:[UIImage imageNamed:@"noun_530953"] scaledToSize:CGSizeMake(30, 30)];
+    self.settings.tintColor = [UIColor blackColor];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -59,142 +86,123 @@
 
             [self presentViewController:loginViewController animated:YES completion:^{
 
-                [self accountAccess:self.account];
+                [[SoundCloudManager sharedSettings] accountAccess:self.account];
+                [SoundCloudManager sharedSettings].account = self.account;
             }];
         }];
     }
-
     else
     {
-        [self accountAccess:self.account];
-       // NSLog(@"user is logged in: %@", self.account);
-        [self accountAccess:self.account];
+        [[SoundCloudManager sharedSettings] accountAccess:self.account];
+        [SoundCloudManager sharedSettings].account = self.account;
+    }
+}
+
+#pragma SEARCH BAR DELEGATES
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+
+    if(searchText.length == 0)
+    {
+        [self.tableView reloadData];
+    }
+    else
+    {
+        [[SoundCloudManager sharedSettings] search:self.account track:searchText  withBlock:^(NSMutableArray *tracks, NSError *error) {
+
+            if (tracks)
+            {
+                self.tracks = tracks;
+                [self.tableView reloadData];
+            }
+            else
+            {
+                NSLog(@"error: %@", [error localizedDescription]);
+            }
+        }];
+
+        [self.tableView beginUpdates];
+        [self.tableView endUpdates];
     }
 }
 
 - (IBAction)onPlaylists:(UIBarButtonItem *)sender
 {
-    [self loadUserData:@"playlists"];
+
+
+    [self performSegueWithIdentifier:@"Playlist" sender:self];
 }
+
 - (IBAction)onSettings:(UIBarButtonItem *)sender
 {
-    [self performSegueWithIdentifier:@"Settings" sender:self];
-    
+    //[self performSegueWithIdentifier:@"Settings" sender:self];
     //put in account page: [SCSoundCloud removeAccess];
 }
 
--(void)accountAccess:(SCAccount*)account
+
+#pragma mark -- TABLEVIEW DELEGATE
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [SCRequest performMethod:SCRequestMethodGET
-                           onResource:[NSURL URLWithString:@"https://api.soundcloud.com/me.json"]
-                      usingParameters:nil
-                          withAccount:account
-               sendingProgressHandler:nil
-                      responseHandler:^(NSURLResponse *response, NSData *data, NSError *error){
-
-                          if (error)
-                          {
-                              NSLog(@"Ooops, something went wrong: %@", [error localizedDescription]);
-                          }
-                          else
-                          {
-                              NSArray *objects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-
-                              for (NSDictionary *sound in objects)
-                              {
-                                  [self parseSCUserData:sound];
-                              }
-                          }
-                      }];
+    return self.tracks.count;
 }
 
--(void)parseSCUserData:(NSDictionary*)soundDict
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SoundCloud *sc = [SoundCloud new];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    Track *track = [self.tracks objectAtIndex:indexPath.row];
 
-    sc.userId = soundDict[@"id"];
-    sc.username = soundDict[@"username"];
-    sc.fullName = soundDict[@"full_name"];
-    sc.avatarURL = soundDict[@"avatar_url"];
-    sc.city = soundDict[@"city"];
-    sc.userPageURL = soundDict[@"permalink_url"];
-    sc.playlistCount = soundDict[@"playlist_count"];
-    sc.trackCount = soundDict[@"track_count"];
+    cell.textLabel.text = track.title;
+    cell.detailTextLabel.text = track.username;
+    cell.imageView.image = [UIImage imageWithData:[self imageCheck:track.avatarURL]];
 
-}
-//atomic) NSString *userId;
-//@property (strong, nonatomic) NSString *username;
-//@property (strong, nonatomic) NSString *fullName;
-//
-//@property (strong, nonatomic) NSString *avatarURL;
-//@property (strong, nonatomic) NSString *city;
-//@property (strong, nonatomic) NSString *userPageURL;
-//@property int *playlistCount;
-//@property int *trackCount;
-
--(void)loadUserSettings
-{
-    NSString *url = [NSString stringWithFormat:@"http://api.soundcloud.com/tracks?client_id=%@", CLIENT_ID];
-    NSURL *URL = [NSURL URLWithString:url];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    NSURLSessionDataTask *dTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, NSData *data , NSError * _Nullable error) {
-
-        if (!response)
-        {
-            NSLog(@"error: %@", error);
-        }
-        else
-        {
-            NSLog(@"user data: %@", response);
-            NSArray *objects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-
-            for (NSDictionary *sound in objects)
-            {
-                NSLog(@"data serialized: %@", sound[@"title"]);
-            }
-
-        }
-    }];
-    
-    [dTask resume];
+    return cell;
 }
 
--(void)loadUserData:(NSString*)userDataEndPoint
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *url = [NSString stringWithFormat:@"http://api.soundcloud.com/%@?client_id=%@", userDataEndPoint, CLIENT_ID];
-    NSURL *URL = [NSURL URLWithString:url];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    NSURLSessionDataTask *dTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, NSData *data , NSError * _Nullable error) {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [SoundCloudManager sharedSettings].selectedTrack = [self.tracks objectAtIndex:indexPath.row];
+    [self addActionSheetForTrack];
+}
 
-        if (!response)
-        {
-            NSLog(@"error: %@", error);
-            //[self.delegate failedToFetchPagnation:error];
-        }
-        else
-        {
-            NSArray *objects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+#pragma mark -- HELPERS
+-(void)addActionSheetForTrack
+{
 
-            for (NSDictionary *sound in objects)
-            {
-                NSLog(@"data serialized: %@", sound[@"title"]);
-            }
-        }
-    }];
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Track Options" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
 
-    [dTask resume];
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+
+        [self dismissViewControllerAnimated:YES completion:^{
+        }];
+    }]];
+
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Play Song" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+
+        //segue for more info page with delegate to SC manager -- throw objects
+    }]];
+
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Add Song to Playlist" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+
+        //post to playlist
+
+    }]];
+
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"More Info" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+
+        [self performSegueWithIdentifier:@"TrackDetail" sender:self];
+    }]];
+
+    [self presentViewController:actionSheet animated:YES completion:nil];
+}
+
+-(NSData*)imageCheck:(NSString*)trackArt
+{
+    NSURL *url = [NSURL URLWithString:trackArt];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+
+    return data;
 }
 @end
-
-
-
-
-
 
 

@@ -10,4 +10,9 @@
 
 @interface Playlist : NSObject
 
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSNumber *listId;
+@property (strong, nonatomic) NSArray *tracks;
+
+
 @end

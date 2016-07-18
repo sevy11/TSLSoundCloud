@@ -19,8 +19,8 @@
  */
 
 #import "UIViewController+SoundCloudUI.h"
+#import "SCAlertView.h"
 
-#import "JSONKit.h"
 #import "SCAPI.h"
 #import "SCAccount+Private.h"
 
@@ -51,7 +51,7 @@
 #define COVER_WIDTH 600.0
 
 
-@interface SCRecordingSaveViewController () <UIPopoverControllerDelegate>
+@interface SCRecordingSaveViewController () <UIScrollViewDelegate, UIPopoverControllerDelegate>
 
 #pragma mark Accessors
 @property (nonatomic, retain) NSArray *availableConnections;
@@ -329,7 +329,7 @@ const NSArray *allServices = nil;
                      responseHandler:^(NSURLResponse *response, NSData *data, NSError *error){
                          if (data) {
                              NSError *jsonError = nil;
-                             NSArray *result = [data objectFromJSONData];
+                             NSArray *result = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
                              if (result) {
                                  loadingConnections = NO;
                                  [self setAvailableConnections:result];
@@ -349,7 +349,7 @@ const NSArray *allServices = nil;
                      responseHandler:^(NSURLResponse *response, NSData *data, NSError *error){
                          if (data) {
                              NSError *jsonError = nil;
-                             id result = [data objectFromJSONData];
+                             id result = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
                              if (result) {
                                  
                                  anAccount.userInfo = result;
@@ -1037,7 +1037,7 @@ const NSArray *allServices = nil;
                  responseHandler:^(NSURLResponse *response, NSData *data, NSError *error){
                      if (data) {
                          NSError *jsonError = nil;
-                         NSArray *result = [data objectFromJSONData];
+                         NSArray *result = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
                          if (result) {
                              [self setAvailableConnections:result];
                          } else {
@@ -1326,7 +1326,7 @@ const NSArray *allServices = nil;
                                              self.uploadRequestHandler = nil;
                                              
                                              NSError *jsonError = nil;
-                                             id result = [data objectFromJSONData]; //[NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+                                             id result = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
                                              
                                              if (error || jsonError || result == nil) {
                                                  
@@ -1340,6 +1340,14 @@ const NSArray *allServices = nil;
                                                  
                                                  self.uploadProgressView.state = SCRecordingUploadProgressViewStateFailed;
                                                  [self.uploadProgressView setNeedsLayout];
+
+                                               [SCAlertView showAlertViewWithTitle:SCLocalizedString(@"upload_error", nil)
+                                                                         message:error.localizedDescription
+                                                               cancelButtonTitle:@"OK"
+                                                               otherButtonTitles:nil
+                                                                           block:^(NSInteger buttonIndex, BOOL didCancel) {
+                                                            }];
+
                                                  
                                                  // update tool bar
                                                  NSMutableArray *toolbarItems = [self.toolBar.items mutableCopy];
@@ -1468,6 +1476,7 @@ const NSArray *allServices = nil;
                                        CGRectGetHeight(self.view.bounds) - 28.0 - CGRectGetHeight(self.toolBar.frame));
     
     self.loginView = [[[SCLoginView alloc] initWithFrame:loginViewFrame] autorelease];
+    self.loginView.contentSize = CGSizeMake(1.0, CGRectGetHeight(self.view.bounds));
     self.loginView.delegate = self;
     [self.view insertSubview:self.loginView belowSubview:self.toolBar];
     
@@ -1668,6 +1677,14 @@ const NSArray *allServices = nil;
     UIImage *finalImage = [scaledImage imagebyRotationToOrientation:originalOrientation];
     
     return finalImage;
+}
+
+#pragma mark -
+#pragma mark UIScrollView delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.loginView setNeedsDisplay];
 }
 
 @end

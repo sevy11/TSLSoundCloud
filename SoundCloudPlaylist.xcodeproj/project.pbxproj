@@ -16,8 +16,13 @@
 		2638B2941D39D6B700411CEA /* SoundCloudPlaylistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638B2931D39D6B700411CEA /* SoundCloudPlaylistTests.m */; };
 		2638B29F1D39D6B700411CEA /* SoundCloudPlaylistUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638B29E1D39D6B700411CEA /* SoundCloudPlaylistUITests.m */; };
 		2638B2B11D3A927800411CEA /* SoundCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638B2B01D3A927800411CEA /* SoundCloud.m */; };
-		2638B2B41D3A98A300411CEA /* UserProfileTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638B2B31D3A98A300411CEA /* UserProfileTableTableViewController.m */; };
 		2638B2B91D3A9A2300411CEA /* SoundCloudManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638B2B81D3A9A2300411CEA /* SoundCloudManager.m */; };
+		264EC7061D3BC3B900E89EFA /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 264EC7051D3BC3B900E89EFA /* Track.m */; };
+		264EC7091D3C261A00E89EFA /* UIColor+SC.m in Sources */ = {isa = PBXBuildFile; fileRef = 264EC7081D3C261A00E89EFA /* UIColor+SC.m */; };
+		264EC70C1D3C312F00E89EFA /* UIImage+SC.m in Sources */ = {isa = PBXBuildFile; fileRef = 264EC70B1D3C312F00E89EFA /* UIImage+SC.m */; };
+		264EC7101D3C330000E89EFA /* ArtistInfoTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 264EC70F1D3C330000E89EFA /* ArtistInfoTable.m */; };
+		264EC7131D3C6CF200E89EFA /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 264EC7121D3C6CF200E89EFA /* Playlist.m */; };
+		264EC7161D3C720500E89EFA /* PlaylistTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 264EC7151D3C720500E89EFA /* PlaylistTableView.m */; };
 		42365EB71C35D49D5FF91A38 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 775BE16B5E97F0531BD2119A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -57,10 +62,20 @@
 		2638B2A01D39D6B700411CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2638B2AF1D3A927800411CEA /* SoundCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundCloud.h; sourceTree = "<group>"; };
 		2638B2B01D3A927800411CEA /* SoundCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundCloud.m; sourceTree = "<group>"; };
-		2638B2B21D3A98A300411CEA /* UserProfileTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileTableTableViewController.h; sourceTree = "<group>"; };
-		2638B2B31D3A98A300411CEA /* UserProfileTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileTableTableViewController.m; sourceTree = "<group>"; };
 		2638B2B71D3A9A2300411CEA /* SoundCloudManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundCloudManager.h; sourceTree = "<group>"; };
 		2638B2B81D3A9A2300411CEA /* SoundCloudManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundCloudManager.m; sourceTree = "<group>"; };
+		264EC7041D3BC3B900E89EFA /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
+		264EC7051D3BC3B900E89EFA /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
+		264EC7071D3C261A00E89EFA /* UIColor+SC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SC.h"; sourceTree = "<group>"; };
+		264EC7081D3C261A00E89EFA /* UIColor+SC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SC.m"; sourceTree = "<group>"; };
+		264EC70A1D3C312F00E89EFA /* UIImage+SC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SC.h"; sourceTree = "<group>"; };
+		264EC70B1D3C312F00E89EFA /* UIImage+SC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SC.m"; sourceTree = "<group>"; };
+		264EC70E1D3C330000E89EFA /* ArtistInfoTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistInfoTable.h; sourceTree = "<group>"; };
+		264EC70F1D3C330000E89EFA /* ArtistInfoTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistInfoTable.m; sourceTree = "<group>"; };
+		264EC7111D3C6CF200E89EFA /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
+		264EC7121D3C6CF200E89EFA /* Playlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Playlist.m; sourceTree = "<group>"; };
+		264EC7141D3C720500E89EFA /* PlaylistTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistTableView.h; sourceTree = "<group>"; };
+		264EC7151D3C720500E89EFA /* PlaylistTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistTableView.m; sourceTree = "<group>"; };
 		775BE16B5E97F0531BD2119A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		90EEEE89C5D31D9ED4AD850B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A6909E9764E1CDBD4494C6C5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +139,7 @@
 				2638B2B51D3A98AC00411CEA /* ViewControllers */,
 				2638B2BA1D3A9A2C00411CEA /* Managers */,
 				2638B2B61D3A98C300411CEA /* Object */,
+				264EC70D1D3C313500E89EFA /* Categories */,
 				2638B2871D39D6B700411CEA /* LaunchScreen.storyboard */,
 				2638B28A1D39D6B700411CEA /* Info.plist */,
 				2638B2791D39D6B700411CEA /* Supporting Files */,
@@ -160,10 +176,12 @@
 		2638B2B51D3A98AC00411CEA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2638B2B21D3A98A300411CEA /* UserProfileTableTableViewController.h */,
-				2638B2B31D3A98A300411CEA /* UserProfileTableTableViewController.m */,
 				2638B27F1D39D6B700411CEA /* ViewController.h */,
 				2638B2801D39D6B700411CEA /* ViewController.m */,
+				264EC70E1D3C330000E89EFA /* ArtistInfoTable.h */,
+				264EC70F1D3C330000E89EFA /* ArtistInfoTable.m */,
+				264EC7141D3C720500E89EFA /* PlaylistTableView.h */,
+				264EC7151D3C720500E89EFA /* PlaylistTableView.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -173,6 +191,10 @@
 			children = (
 				2638B2AF1D3A927800411CEA /* SoundCloud.h */,
 				2638B2B01D3A927800411CEA /* SoundCloud.m */,
+				264EC7041D3BC3B900E89EFA /* Track.h */,
+				264EC7051D3BC3B900E89EFA /* Track.m */,
+				264EC7111D3C6CF200E89EFA /* Playlist.h */,
+				264EC7121D3C6CF200E89EFA /* Playlist.m */,
 			);
 			name = Object;
 			sourceTree = "<group>";
@@ -184,6 +206,17 @@
 				2638B2B81D3A9A2300411CEA /* SoundCloudManager.m */,
 			);
 			name = Managers;
+			sourceTree = "<group>";
+		};
+		264EC70D1D3C313500E89EFA /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				264EC7071D3C261A00E89EFA /* UIColor+SC.h */,
+				264EC7081D3C261A00E89EFA /* UIColor+SC.m */,
+				264EC70A1D3C312F00E89EFA /* UIImage+SC.h */,
+				264EC70B1D3C312F00E89EFA /* UIImage+SC.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		F4CA1D366E667C648B2E88BA /* Pods */ = {
@@ -385,11 +418,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2638B2811D39D6B700411CEA /* ViewController.m in Sources */,
+				264EC7101D3C330000E89EFA /* ArtistInfoTable.m in Sources */,
+				264EC70C1D3C312F00E89EFA /* UIImage+SC.m in Sources */,
 				2638B27E1D39D6B700411CEA /* AppDelegate.m in Sources */,
-				2638B2B41D3A98A300411CEA /* UserProfileTableTableViewController.m in Sources */,
 				2638B2B91D3A9A2300411CEA /* SoundCloudManager.m in Sources */,
+				264EC7091D3C261A00E89EFA /* UIColor+SC.m in Sources */,
+				264EC7161D3C720500E89EFA /* PlaylistTableView.m in Sources */,
+				264EC7061D3BC3B900E89EFA /* Track.m in Sources */,
 				2638B27B1D39D6B700411CEA /* main.m in Sources */,
 				2638B2B11D3A927800411CEA /* SoundCloud.m in Sources */,
+				264EC7131D3C6CF200E89EFA /* Playlist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

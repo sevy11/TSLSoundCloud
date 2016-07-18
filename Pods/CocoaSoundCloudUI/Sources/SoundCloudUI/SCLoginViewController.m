@@ -1,12 +1,12 @@
 /*
  * Copyright 2010, 2011 nxtbgthng for SoundCloud Ltd.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- *
+ * 
  * http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -15,7 +15,7 @@
  *
  * For more information and documentation refer to
  * http://soundcloud.com/api
- *
+ * 
  */
 
 #import "UIViewController+SoundCloudUI.h"
@@ -62,11 +62,11 @@
 
 + (id)loginViewControllerWithPreparedURL:(NSURL *)anURL completionHandler:(SCLoginViewControllerCompletionHandler)aCompletionHandler;
 {
-
+    
     SCLoginViewController *loginViewController = [[[self alloc] initWithPreparedURL:anURL completionHandler:aCompletionHandler] autorelease];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
     [navigationController setModalPresentationStyle:UIModalPresentationFormSheet];
-
+    
     return [navigationController autorelease];
 }
 
@@ -82,12 +82,12 @@
     if (self) {
         preparedURL = [anURL retain];
         completionHandler = [aCompletionHandler copy];
-
+        
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(accountDidChange:)
                                                      name:SCSoundCloudAccountDidChangeNotification
                                                    object:nil];
-
+        
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(failToRequestAccess:)
                                                      name:SCSoundCloudDidFailToRequestAccessNotification
@@ -126,7 +126,7 @@
     self.loginView.contentSize = CGSizeMake(1.0, CGRectGetHeight(self.loginView.bounds));
     [self.loginView removeAllCookies];
     [self.view addSubview:self.loginView];
-
+    
     // Navigation Bar
     self.navigationController.navigationBarHidden = YES;
 }
@@ -162,7 +162,7 @@
     if (self.completionHandler) {
         self.completionHandler(nil);
     }
-
+    
     [[self modalPresentingViewController] dismissModalViewControllerAnimated:YES];
 }
 
@@ -172,7 +172,7 @@
         NSError *error = [[aNotification userInfo] objectForKey:NXOAuth2AccountStoreErrorKey];
         self.completionHandler(error);
     }
-
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:SCLocalizedString(@"auth_error", @"Auth Error")
                                                     message:SCLocalizedString(@"auth_error_message", @"Auth Message Error")
                                                    delegate:nil
@@ -210,12 +210,12 @@
 #pragma mark Private
 
 - (void)cancel;
-{
+{   
     if (self.completionHandler) {
         NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"Canceled by user." forKey:NSLocalizedDescriptionKey];
         self.completionHandler([NSError errorWithDomain:SCUIErrorDomain code:SCUICanceledErrorCode userInfo:userInfo]);
     }
-
+    
     [[self modalPresentingViewController] dismissModalViewControllerAnimated:YES];
 }
 

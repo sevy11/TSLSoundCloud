@@ -6,8 +6,8 @@ Please see CocoaAPI wrapper [README](https://github.com/soundcloud/CocoaSoundClo
 You can include this SDK by adding following lines to your `Podfile`:
 
 ```
-pod 'CocoaSoundCloudAPI', '1.0.1'
-pod 'CocoaSoundCloudUI', '1.0.5'
+pod 'CocoaSoundCloudAPI', '1.0.2'
+pod 'CocoaSoundCloudUI', '1.0.9'
 ```
 
 and run the following command `pod install`.
